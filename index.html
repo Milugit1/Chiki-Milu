@@ -606,6 +606,303 @@ body { font-family: 'Lato', sans-serif; background: var(--dark); color: #f5ede0;
 .setup-notice strong { color: var(--gold2); }
 .setup-notice a { color: var(--gold2); }
 
+<!-- ══════════════ RSVP SECTION ══════════════ -->
+<section id="rsvp" style="
+  padding: 80px 20px;
+  background: var(--dark);
+  text-align: center;
+">
+
+  <!-- Section Header -->
+  <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:7px; color:var(--gold2); text-transform:uppercase;">
+    You Are Invited
+  </p>
+
+  <div style="display:flex; align-items:center; justify-content:center; gap:14px; margin:18px 0;">
+    <div style="height:1px; width:70px; background:linear-gradient(to right,transparent,var(--gold));"></div>
+    <div style="width:7px; height:7px; background:var(--gold2); transform:rotate(45deg);"></div>
+    <div style="height:1px; width:70px; background:linear-gradient(to left,transparent,var(--gold));"></div>
+  </div>
+
+  <h2 style="font-family:'Great Vibes',cursive; font-size:clamp(48px,10vw,80px); color:#fff; margin-bottom:10px;">
+    RSVP
+  </h2>
+
+  <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; color:rgba(255,255,255,0.6); margin-bottom:50px;">
+    Kindly confirm your attendance
+  </p>
+
+  <!-- RSVP Form Card -->
+  <div style="
+    max-width: 520px;
+    margin: 0 auto;
+    border: 1px solid rgba(201,151,58,0.35);
+    padding: 50px 40px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+  ">
+
+    <form id="rsvpForm">
+
+      <!-- Guest Name -->
+      <div style="margin-bottom:24px; text-align:left;">
+        <label style="
+          display:block;
+          font-family:'Cinzel',serif;
+          font-size:10px;
+          letter-spacing:4px;
+          color:var(--gold2);
+          text-transform:uppercase;
+          margin-bottom:8px;
+        ">Guest Name</label>
+        <input
+          type="text"
+          id="guestName"
+          placeholder="Enter your full name"
+          required
+          style="
+            width:100%;
+            background:rgba(255,255,255,0.05);
+            border:none;
+            border-bottom:1px solid rgba(201,151,58,0.4);
+            padding:12px 4px;
+            color:#f5ede0;
+            font-family:'Cormorant Garamond',serif;
+            font-size:16px;
+            outline:none;
+            box-sizing:border-box;
+            transition:border-color 0.3s;
+          "
+          onfocus="this.style.borderBottomColor='var(--gold2)'"
+          onblur="this.style.borderBottomColor='rgba(201,151,58,0.4)'"
+        >
+      </div>
+
+      <!-- Phone Number -->
+      <div style="margin-bottom:24px; text-align:left;">
+        <label style="
+          display:block;
+          font-family:'Cinzel',serif;
+          font-size:10px;
+          letter-spacing:4px;
+          color:var(--gold2);
+          text-transform:uppercase;
+          margin-bottom:8px;
+        ">Phone Number</label>
+        <input
+          type="tel"
+          id="guestPhone"
+          placeholder="Enter your phone number"
+          required
+          style="
+            width:100%;
+            background:rgba(255,255,255,0.05);
+            border:none;
+            border-bottom:1px solid rgba(201,151,58,0.4);
+            padding:12px 4px;
+            color:#f5ede0;
+            font-family:'Cormorant Garamond',serif;
+            font-size:16px;
+            outline:none;
+            box-sizing:border-box;
+            transition:border-color 0.3s;
+          "
+          onfocus="this.style.borderBottomColor='var(--gold2)'"
+          onblur="this.style.borderBottomColor='rgba(201,151,58,0.4)'"
+        >
+      </div>
+
+      <!-- Guest Type -->
+      <div style="margin-bottom:40px; text-align:left;">
+        <label style="
+          display:block;
+          font-family:'Cinzel',serif;
+          font-size:10px;
+          letter-spacing:4px;
+          color:var(--gold2);
+          text-transform:uppercase;
+          margin-bottom:14px;
+        ">You Are Our</label>
+
+        <div style="display:flex; gap:16px;">
+
+          <!-- Friend Option -->
+          <label style="
+            flex:1;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            border:1px solid rgba(201,151,58,0.35);
+            padding:14px;
+            cursor:pointer;
+            font-family:'Cinzel',serif;
+            font-size:11px;
+            letter-spacing:3px;
+            color:rgba(255,255,255,0.7);
+            transition:all 0.3s;
+          "
+          id="label-friend"
+          onmouseover="this.style.borderColor='var(--gold2)'; this.style.color='var(--gold2)'"
+          onmouseout="syncLabelStyle()"
+          >
+            <input
+              type="radio"
+              name="guestType"
+              value="Friend"
+              id="typeFriend"
+              style="display:none;"
+              onchange="syncLabelStyle()"
+            >
+            <span style="font-size:18px;">🤝</span> FRIEND
+          </label>
+
+          <!-- Family Option -->
+          <label style="
+            flex:1;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:10px;
+            border:1px solid rgba(201,151,58,0.35);
+            padding:14px;
+            cursor:pointer;
+            font-family:'Cinzel',serif;
+            font-size:11px;
+            letter-spacing:3px;
+            color:rgba(255,255,255,0.7);
+            transition:all 0.3s;
+          "
+          id="label-family"
+          onmouseover="this.style.borderColor='var(--gold2)'; this.style.color='var(--gold2)'"
+          onmouseout="syncLabelStyle()"
+          >
+            <input
+              type="radio"
+              name="guestType"
+              value="Family"
+              id="typeFamily"
+              style="display:none;"
+              onchange="syncLabelStyle()"
+            >
+            <span style="font-size:18px;">❤️</span> FAMILY
+          </label>
+
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        id="rsvpBtn"
+        style="
+          width:100%;
+          padding:16px;
+          background:transparent;
+          border:1px solid var(--gold);
+          color:var(--gold2);
+          font-family:'Cinzel',serif;
+          font-size:12px;
+          letter-spacing:5px;
+          text-transform:uppercase;
+          cursor:pointer;
+          transition:all 0.3s;
+        "
+        onmouseover="this.style.background='rgba(201,151,58,0.15)'"
+        onmouseout="this.style.background='transparent'"
+      >
+        Confirm Attendance
+      </button>
+
+      <!-- Status Message -->
+      <p id="rsvpStatus" style="
+        margin-top:20px;
+        font-family:'Cormorant Garamond',serif;
+        font-style:italic;
+        font-size:16px;
+        min-height:24px;
+        transition:all 0.3s;
+      "></p>
+
+    </form>
+  </div>
+</section>
+
+<!-- ══════════════ RSVP SCRIPT ══════════════ -->
+<script>
+  // ← Paste your Web App URL here
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzUJlONfmV6-tD6kEa9oIKVzQO_K7HacLaXYRHVEf9UgEmIONRhNVceGo6EApvSTlqj/exec";
+
+  // Keeps radio button labels visually in sync
+  function syncLabelStyle() {
+    const friendChecked = document.getElementById("typeFriend").checked;
+    const familyChecked = document.getElementById("typeFamily").checked;
+    const goldBorder    = "1px solid var(--gold2)";
+    const goldColor     = "var(--gold2)";
+    const dimBorder     = "1px solid rgba(201,151,58,0.35)";
+    const dimColor      = "rgba(255,255,255,0.7)";
+
+    document.getElementById("label-friend").style.border = friendChecked ? goldBorder : dimBorder;
+    document.getElementById("label-friend").style.color  = friendChecked ? goldColor  : dimColor;
+    document.getElementById("label-family").style.border = familyChecked ? goldBorder : dimBorder;
+    document.getElementById("label-family").style.color  = familyChecked ? goldColor  : dimColor;
+  }
+
+  // Form submission → sends JSON to your Apps Script
+  document.getElementById("rsvpForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name      = document.getElementById("guestName").value.trim();
+    const phone     = document.getElementById("guestPhone").value.trim();
+    const guestType = document.querySelector('input[name="guestType"]:checked');
+    const btn       = document.getElementById("rsvpBtn");
+    const status    = document.getElementById("rsvpStatus");
+
+    // Validate guest type selected
+    if (!guestType) {
+      status.style.color = "#e8b84b";
+      status.textContent = "✦ Please select Friend or Family";
+      return;
+    }
+
+    // Loading state
+    btn.textContent = "Sending...";
+    btn.disabled    = true;
+    status.textContent = "";
+
+    // Send JSON — matches your doPost exactly
+    fetch(WEB_APP_URL, {
+      method:  "POST",
+      headers: { "Content-Type": "application/json" },
+      body:    JSON.stringify({
+        name:      name,
+        phone:     phone,
+        guestType: guestType.value
+        // Date of confirmation is added automatically by your Apps Script
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.result === "success") {
+        status.style.color = "#e8b84b";
+        status.textContent = "✦ Thank you! We look forward to celebrating with you ✦";
+        document.getElementById("rsvpForm").reset();
+        syncLabelStyle();
+      } else {
+        throw new Error(data.error);
+      }
+    })
+    .catch(() => {
+      status.style.color = "#cc4444";
+      status.textContent = "Something went wrong. Please try again.";
+    })
+    .finally(() => {
+      btn.textContent = "Confirm Attendance";
+      btn.disabled    = false;
+    });
+  });
+</script>
+
 /* ══════════════ FOOTER ══════════════ */
 footer {
   text-align: center;
@@ -923,7 +1220,7 @@ footer {
             <div class="event-detail-icon">📍</div>
             <div class="event-detail-text">
               <strong>Venue</strong>
-              <span>Family Residence, Bhubaneswar</span>
+              <span>Trupti convention,Near Dhauli square</span>
             </div>
           </div>
           <div class="event-detail">
